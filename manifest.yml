@@ -1,0 +1,23 @@
+modules:
+  jira:issuePanel:
+    - key: hcd-app-hello-world-panel
+      resource: main
+      resolver:
+        function: resolver
+      viewportSize: medium
+      title: hcd-app
+      icon: https://developer.atlassian.com/platform/forge/images/issue-panel-icon.svg
+  function:
+    - key: resolver
+      handler: index.handler
+resources:
+  - key: main
+    path: static/hello-world/build
+permissions:
+  scopes:
+    - read:jira-work
+    - read:issue:jira
+app:
+  runtime:
+    name: nodejs18.x
+  id: ari:cloud:ecosystem::app/fe3b624e-b4e2-43ee-b558-891749dc51d0
